@@ -38,7 +38,7 @@ public class OrderRepo implements AbstractRepo<Order> {
     }
 
     @Override
-    public Collection<Order> getAll() {
-        return orderMap.values();
+    public List<Order> getAll() {
+        return orderMap.values().stream().toList();
     }
 }

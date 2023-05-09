@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 @AllArgsConstructor
@@ -18,7 +19,7 @@ public class UserService {
         return Optional.of(userRepo.getById(id));
     }
 
-    public Collection<User> getAll() {
+    public List<User> getAll() {
         return userRepo.getAll();
     }
 

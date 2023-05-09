@@ -30,12 +30,4 @@ public class ViewResolver {
 
     private Map<String, String> views;
 
-//            = Map.of(
-//            "", "WEB-INF/index.jsp",
-//            "/users", "WEB-INF/users.jsp",
-//            "/user", "WEB-INF/user.jsp",
-//            "/orders", "WEB-INF/orders.jsp",
-//            "/order", "WEB-INF/order.jsp"
-//    );
-
 }

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.List;
 
 @Controller(value = "/users")
 @RequiredArgsConstructor
@@ -20,7 +21,7 @@ public class UsersCommand implements Command {
 
     @Override
     public String doGet(HttpServletRequest request) {
-        Collection<User> users = userService.getAll();
+        List<User> users = userService.getAll();
         request.setAttribute("users", users);
         return "/users";
     }

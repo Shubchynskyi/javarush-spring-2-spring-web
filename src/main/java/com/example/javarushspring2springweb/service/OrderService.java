@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @AllArgsConstructor
@@ -17,7 +18,7 @@ public class OrderService {
     public Optional<Order> get(Long id) {
         return Optional.of(orderRepo.getById(id));
     }
-    public Collection<Order> getAll() {
+    public List<Order> getAll() {
         return orderRepo.getAll();
     }
 }

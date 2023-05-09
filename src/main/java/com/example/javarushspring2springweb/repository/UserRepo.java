@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 @AllArgsConstructor
@@ -22,7 +23,7 @@ public class UserRepo implements AbstractRepo<User> {
     }
 
     @Override
-    public Collection<User> getAll() {
-        return userMap.values();
+    public List<User> getAll() {
+        return userMap.values().stream().toList();
     }
 }

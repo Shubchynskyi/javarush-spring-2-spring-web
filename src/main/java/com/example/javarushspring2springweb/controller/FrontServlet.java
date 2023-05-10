@@ -17,15 +17,6 @@ public class FrontServlet extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-        System.out.println("in init");
-//        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ApplicationConfig.class);
-//        String[] names = applicationContext.getBeanDefinitionNames();
-//        System.out.println("============= context =============");
-//        Arrays.asList(names).forEach(System.out::println);
-//        System.out.println("============= context =============");
-//        commandResolver = applicationContext.getBean(CommandResolver.class);
-//        commandResolver.fillContextMap(applicationContext);
-//        viewResolver = applicationContext.getBean(ViewResolver.class);
         JavaConfigApplication.init();
         super.init(config);
     }

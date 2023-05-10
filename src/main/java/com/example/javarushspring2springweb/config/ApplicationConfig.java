@@ -1,7 +1,5 @@
 package com.example.javarushspring2springweb.config;
 
-import com.example.javarushspring2springweb.controller.comands.Command;
-import com.example.javarushspring2springweb.controller.comands.CommandResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +20,4 @@ public class ApplicationConfig {
                 "/order", "WEB-INF/order.jsp"
         );
     }
-
-
 }

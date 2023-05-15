@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(urlPatterns = {"", "/user", "/users", "/order", "/orders"}, loadOnStartup = 0)
+@WebServlet(urlPatterns = {"", "/user", "/users", "/order", "/orders", "/product", "/products"}, loadOnStartup = 0)
 public class FrontServlet extends HttpServlet {
 
     @Override
@@ -23,6 +23,7 @@ public class FrontServlet extends HttpServlet {
 
     private final CommandResolver commandResolver = JavaConfigApplication.getContext().getBean(CommandResolver.class);
     private final ViewResolver viewResolver = JavaConfigApplication.getContext().getBean(ViewResolver.class);
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

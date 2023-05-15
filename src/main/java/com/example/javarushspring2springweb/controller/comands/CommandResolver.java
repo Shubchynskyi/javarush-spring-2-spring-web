@@ -7,12 +7,6 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 
 
-/*
- * Разработай еще один бин CommandResolver,
- * который по переданному URI будет определать какой из бинов должен обработать текущую операцию
- * и находить их в контексте.
- * Для сопоставления бинов с URI можно использовать коллекции, карты или enum.
- * */
 @Component
 public class CommandResolver {
 
@@ -39,7 +33,9 @@ public class CommandResolver {
                 "users", applicationContext.getBean(UsersCommand.class),
                 "user", applicationContext.getBean(UserCommand.class),
                 "orders", applicationContext.getBean(OrdersCommand.class),
-                "order", applicationContext.getBean(OrderCommand.class)
+                "order", applicationContext.getBean(OrderCommand.class),
+                "products", applicationContext.getBean(ProductsCommand.class),
+                "product", applicationContext.getBean(ProductCommand.class)
         );
     }
 }

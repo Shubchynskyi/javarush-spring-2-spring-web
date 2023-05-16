@@ -17,5 +17,16 @@
         </c:forEach>
     </div>
 </div>
+<div>
+    <form method="POST" action="users">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Create User</button>
+    </form>
+</div>
 </body>
 </html>

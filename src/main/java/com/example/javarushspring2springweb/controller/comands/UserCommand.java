@@ -2,7 +2,6 @@ package com.example.javarushspring2springweb.controller.comands;
 
 import com.example.javarushspring2springweb.entity.User;
 import com.example.javarushspring2springweb.service.UserService;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -22,5 +21,12 @@ public class UserCommand implements Command {
 
         return "/user";
     }
+
+    @Override
+    public String doPost(HttpServletRequest request, HttpServletResponse response) {
+        return null;
+    }
+
+
 }
 

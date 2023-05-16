@@ -3,7 +3,6 @@ package com.example.javarushspring2springweb.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -29,6 +28,6 @@ public class Order {
             joinColumns = @JoinColumn(name = "order_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id"))
     @ToString.Exclude
-    private final List<Product> orderList = new ArrayList<>();
+    private List<Product> orderList;
 
 }

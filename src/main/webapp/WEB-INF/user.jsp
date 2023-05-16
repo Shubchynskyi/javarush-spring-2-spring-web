@@ -1,10 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Shubchynskyi
-  Date: 07.05.2023
-  Time: 14:27
-  To change this template use File | Settings | File Templates.
---%>
+<jsp:useBean id="user" scope="request" type="com.example.javarushspring2springweb.entity.User"/>
+
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <body>
@@ -12,6 +7,8 @@
 <p>Name: ${user.id}</p>
 <p>Name: ${user.name}</p>
 <p>Password: ${user.password}</p>
+
+
 </body>
 </html>
 

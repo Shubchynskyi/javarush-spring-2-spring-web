@@ -4,9 +4,9 @@
 <html>
 <body>
 <h1>Product data</h1>
-<p>Name: ${product.id}</p>
-<p>Name: ${product.title}</p>
-<p>Password: ${product.description}</p>
+<p>Id: ${product.id}</p>
+<p>Title: ${product.title}</p>
+<p>Description: ${product.description}</p>
 </body>
 </html>
 

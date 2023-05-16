@@ -1,10 +1,7 @@
 package com.example.javarushspring2springweb.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +11,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +20,7 @@ public class Product {
     private String description;
 
     @ManyToMany(mappedBy = "orderList")
+    @ToString.Exclude
     private final List<Order> orders = new ArrayList<>();
-
 
 }

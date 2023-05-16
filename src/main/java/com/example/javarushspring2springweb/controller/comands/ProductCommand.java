@@ -3,6 +3,7 @@ package com.example.javarushspring2springweb.controller.comands;
 import com.example.javarushspring2springweb.entity.Product;
 import com.example.javarushspring2springweb.service.ProductService;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 
@@ -19,6 +20,11 @@ public class ProductCommand implements Command {
         request.setAttribute("product", product);
 
         return "/product";
+    }
+
+    @Override
+    public String doPost(HttpServletRequest request, HttpServletResponse response) {
+        return null;
     }
 }
 

@@ -1,6 +1,7 @@
 package com.example.javarushspring2springweb.controller.comands;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +17,12 @@ public class CommandResolver {
         String commandName = extractCommandFromUri(request.getRequestURI());
         Command commandBean = commands.get(commandName);
         return commandBean.doGet(request);
+    }
+
+    public String resolveCommand(HttpServletRequest request, HttpServletResponse response) {
+        String commandName = extractCommandFromUri(request.getRequestURI());
+        Command commandBean = commands.get(commandName);
+        return commandBean.doPost(request, response);
     }
 
     private String extractCommandFromUri(String uri) {

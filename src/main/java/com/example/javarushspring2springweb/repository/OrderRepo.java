@@ -3,17 +3,19 @@ package com.example.javarushspring2springweb.repository;
 import com.example.javarushspring2springweb.config.SessionCreator;
 import com.example.javarushspring2springweb.entity.Order;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@AllArgsConstructor
 @Repository
+@AllArgsConstructor
 public class OrderRepo implements AbstractRepo<Order> {
 
     private final SessionCreator sessionCreator;
+
 
     public Order getById(Long id) {
         Session session = sessionCreator.getSession();

@@ -4,6 +4,7 @@ package com.example.javarushspring2springweb.config;
 import com.example.javarushspring2springweb.entity.Order;
 import com.example.javarushspring2springweb.entity.Product;
 import com.example.javarushspring2springweb.entity.User;
+import lombok.NoArgsConstructor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy;

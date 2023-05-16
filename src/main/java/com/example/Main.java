@@ -1,6 +1,7 @@
 package com.example;
 
 import com.example.javarushspring2springweb.config.JavaConfigApplication;
+import com.example.javarushspring2springweb.config.Logger;
 import com.example.javarushspring2springweb.service.UserService;
 
 public class Main {

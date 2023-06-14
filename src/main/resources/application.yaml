@@ -1,0 +1,12 @@
+#hibernate:
+#  connection:
+#    url: jdbc:postgresql://localhost:2345/postgres
+#    driver_class: org.postgresql.Driver
+#    username: postgres
+#    password: postgres
+#    default_schema: test
+#  show_sql: true
+#  format_sql: true
+#  hbm2ddl:
+#    auto: validate
+

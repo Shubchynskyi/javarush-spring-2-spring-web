@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>$Title$</title>
+</head>
+<h2>Order data</h2>
+<body>
+<ul>
+  <li th:text="${order.getId()}">${order.id}</li>
+  <li th:text="${order.getUser()}">${order.user.name}</li>
+  <li th:text="${order.getAddress()}">${order.address}</li>
+  <li th:text="${order.getOrderList()}">${order.address}</li>
+</ul>
+</body>
+</html>

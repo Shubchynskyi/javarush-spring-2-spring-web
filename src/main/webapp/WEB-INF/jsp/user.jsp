@@ -1,4 +1,5 @@
-<jsp:useBean id="user" scope="request" type="com.example.javarushspring2springweb.lessons1_7.entity.User"/>
+<jsp:useBean id="user" scope="request"
+             type="com.example.javarushspring2springweb.lesson8_controllers.entity.User"/>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>

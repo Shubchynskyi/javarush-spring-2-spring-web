@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Users</title>
+</head>
+<h2>Orders!</h2>
+<body>
+<div>
+    <div>
+        <ul th:each="order : ${orders}">
+            <li>Order user - <span th:text="${order.getUser().getName()}"></span></li>
+            <li>Order address - <span th:text="${order.address}"></span></li>
+            <li>
+                <a th:href="@{/order(id=${order.id})}">Order description</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div>
+    <h1>Create Order</h1>
+    <form method="post" action="/orders">
+        <label for="user">User:</label>
+        <select id="user" name="userId">
+            <option th:each="user : ${users}" th:value="${user.getId()}" th:text="${user.getName()}"></option>
+        </select>
+        <br><br>
+        <label for="address">Delivery Address:</label>
+        <input type="text" id="address" name="address">
+        <br><br>
+        <div th:each="product : ${products}">
+            <input type="checkbox" th:id="'product-' + ${product.id}" th:name="productIds" th:value="${product.id}">
+            <label th:for="'product-' + ${product.id}" th:text="${product.title}"></label>
+            <br>
+        </div>
+        <br>
+        <input type="submit" value="Create Order">
+    </form>
+</div>
+</body>
+</html>

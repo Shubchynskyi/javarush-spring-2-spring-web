@@ -21,13 +21,11 @@ public class ProductService {
         return productRepo.findAll();
     }
 
-    public void create(String title, String description) {
+    public Optional<Product> create(String title, String description) {
         Product build = Product.builder()
                 .title(title)
                 .description(description)
                 .build();
-        productRepo.save(build);
+        return Optional.of(productRepo.save(build));
     }
-
-
 }

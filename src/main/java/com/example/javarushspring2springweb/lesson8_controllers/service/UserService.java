@@ -24,12 +24,12 @@ public class UserService {
         return userRepo.findAll();
     }
 
-    public void create(String name, String password) {
+    public Optional<User> create (String name, String password) {
         User build = User.builder()
                 .name(name)
                 .password(password)
                 .build();
-        userRepo.save(build);
+        return Optional.of(userRepo.save(build));
     }
 
 

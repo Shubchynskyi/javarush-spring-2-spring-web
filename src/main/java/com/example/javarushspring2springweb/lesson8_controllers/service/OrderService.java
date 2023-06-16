@@ -24,21 +24,22 @@ public class OrderService {
         return orderRepo.findAll();
     }
 
-    public void create(String userId, String address, String[] productIds) {
+    public Optional<Order> create(String userId, String address, String[] productIds) {
         Optional<User> userOptional = userService.get(Long.parseLong(userId));
         List<Product> productList = new ArrayList<>();
         for (String productId : productIds) {
             Optional<Product> product = productService.get(Long.valueOf(productId));
             product.ifPresent(productList::add);
         }
-        if(userOptional.isPresent()) {
-            Order build = Order.builder()
-                    .user(userOptional.get())
-                    .address(address)
-                    .orderList(productList)
-                    .build();
-            orderRepo.save(build);
-        }
 
+        User user = userOptional.orElseThrow(() -> new RuntimeException("User not found"));
+
+        Order build = Order.builder()
+                .user(user)
+                .address(address)
+                .orderList(productList)
+                .build();
+
+        return Optional.of(orderRepo.save(build));
     }
 }

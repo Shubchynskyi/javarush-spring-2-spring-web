@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Order</title>
 </head>
-<h2>Order data</h2>
 <body>
+<h2>Order data</h2>
 <ul>
-  <li th:text="${order.getId()}">${order.id}</li>
-  <li th:text="${order.getUser()}">${order.user.name}</li>
-  <li th:text="${order.getAddress()}">${order.address}</li>
-  <li th:text="${order.getOrderList()}">${order.address}</li>
+  <li>Order number - <span th:text="${order.getId()}"></span></li>
+  <li>User name - <span th:text="${order.getUserDTO().getName()}"></span></li>
+  <li>Address - <span th:text="${order.getAddress()}"></span></li>
+  <li>
+    Order list:
+    <ul th:each="product : ${order.getOrderList()}">
+      <li th:text="${product.getTitle()} + ' (' + ${product.getDescription()} + ')'"></li>
+    </ul>
+  </li>
 </ul>
 </body>
 </html>

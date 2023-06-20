@@ -1,7 +1,6 @@
 package com.example.javarushspring2springweb.lesson8_controllers.entity;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -34,7 +33,6 @@ public class Order {
             inverseJoinColumns = @JoinColumn(name = "product_id"))
     @ToString.Exclude
     @JsonManagedReference
-//    @JsonIgnore
     private List<Product> orderList;
 
 }

@@ -1,7 +1,9 @@
 package com.example.javarushspring2springweb.lesson8_controllers.controller;
 
+import com.example.javarushspring2springweb.lesson8_controllers.dto.OrderDTO;
 import com.example.javarushspring2springweb.lesson8_controllers.entity.Order;
 import com.example.javarushspring2springweb.lesson8_controllers.exeption.ResourceNotFoundException;
+import com.example.javarushspring2springweb.lesson8_controllers.mapper.OrderMapper;
 import com.example.javarushspring2springweb.lesson8_controllers.service.OrderService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class OrderController{
 
     private final OrderService orderService;
+    private final OrderMapper orderMapper;
 
     @GetMapping("order")
     public String showOrder(
@@ -23,7 +26,10 @@ public class OrderController{
         Order order = orderService.get(Long.valueOf(id)).orElseThrow(
                 () -> new ResourceNotFoundException("Order not found with id " + id)
         );
-        model.addAttribute("order", order);
+
+        OrderDTO orderDTO = orderMapper.orderToOrderDTO(order);
+
+        model.addAttribute("order", orderDTO);
         return "order";
     }
 

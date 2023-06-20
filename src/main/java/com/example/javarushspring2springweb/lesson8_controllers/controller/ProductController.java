@@ -1,7 +1,9 @@
 package com.example.javarushspring2springweb.lesson8_controllers.controller;
 
+import com.example.javarushspring2springweb.lesson8_controllers.dto.ProductDTO;
 import com.example.javarushspring2springweb.lesson8_controllers.entity.Product;
 import com.example.javarushspring2springweb.lesson8_controllers.exeption.ResourceNotFoundException;
+import com.example.javarushspring2springweb.lesson8_controllers.mapper.ProductMapper;
 import com.example.javarushspring2springweb.lesson8_controllers.service.ProductService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ProductController {
 
     private final ProductService productService;
+    private final ProductMapper productMapper;
 
     @GetMapping("product")
     public String showProduct(
@@ -24,7 +27,10 @@ public class ProductController {
         Product product = productService.get(Long.valueOf(id)).orElseThrow(
                 () -> new ResourceNotFoundException("Product not found with id " + id)
         );
-        model.addAttribute("product", product);
+
+        ProductDTO productDTO = productMapper.productToProductDTO(product);
+
+        model.addAttribute("product", productDTO);
 
         return "product";
     }

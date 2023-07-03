@@ -21,13 +21,13 @@ public interface UserMapper {
     })
     UserDTO userToUserDTOWithoutPassword(User user);
 
-//    @Named("userDTOToUserWithoutPassword")
-//    @Mappings({
-////            @Mapping(target = "id", source = "id"),
-//            @Mapping(target = "name", source = "name")
-////            @Mapping(target = "password", ignore = true)
-//    })
-//    User userDTOToUserWithoutPassword(UserDTO userDTO);
+    @Named("userDTOToUserWithoutPassword")
+    @Mappings({
+//            @Mapping(target = "id", source = "id"),
+            @Mapping(target = "name", source = "name")
+//            @Mapping(target = "password", ignore = true)
+    })
+    User userDTOToUserWithoutPassword(UserDTO userDTO);
 
     UserDTO userToUserDTO(User user);
 

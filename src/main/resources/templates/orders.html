@@ -2,14 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>HTML Users</title>
+    <title>HTML Customers</title>
 </head>
 <h2>Orders!</h2>
 <body>
 <div>
     <div>
         <ul th:each="order : ${orders}">
-            <li>Order user - <span th:text="${order.getUserDTO().getName()}"></span></li>
+            <li>Order customer - <span th:text="${order.getCustomerDTO().getName()}"></span></li>
             <li>Order address - <span th:text="${order.address}"></span></li>
             <li>
                 <a th:href="@{/order(id=${order.id})}">Order description</a>
@@ -20,9 +20,9 @@
 <div>
     <h1>Create Order</h1>
     <form method="post" action="/orders">
-        <label for="user">User:</label>
-        <select id="user" name="userId">
-            <option th:each="user : ${users}" th:value="${user.getId()}" th:text="${user.getName()}"></option>
+        <label for="customer">Customer:</label>
+        <select id="customer" name="customerId">
+            <option th:each="customer : ${customers}" th:value="${customer.getId()}" th:text="${customer.getName()}"></option>
         </select>
         <br><br>
         <label for="address">Delivery Address:</label>

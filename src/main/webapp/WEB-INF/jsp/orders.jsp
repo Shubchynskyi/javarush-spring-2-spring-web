@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HTML Users</title>
+    <title>HTML Customers</title>
 </head>
 <h2>Orders!</h2>
 <body>
@@ -12,7 +12,7 @@
     <div>
         <c:forEach var="order" items="${requestScope.orders}">
             <li>
-            <li>Order user - ${order.user.name}</li>
+            <li>Order customer - ${order.customer.name}</li>
             <li>Order address - ${order.address}</li>
             <li>
                 <a href="order?id=${order.id}">Order description</a>
@@ -24,10 +24,10 @@
 <div>
     <h1>Create Order</h1>
     <form method="post" action="orders">
-        <label for="user">User:</label>
-        <select id="user" name="userId">
-            <c:forEach items="${requestScope.users}" var="user">
-                <option value="${user.id}">${user.name}</option>
+        <label for="customer">Customer:</label>
+        <select id="customer" name="customerId">
+            <c:forEach items="${requestScope.customers}" var="customer">
+                <option value="${customer.id}">${customer.name}</option>
             </c:forEach>
         </select>
         <br><br>

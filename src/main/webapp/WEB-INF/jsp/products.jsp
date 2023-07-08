@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HTML Users</title>
+    <title>HTML Customers</title>
 </head>
 <h2>Products!</h2>
 <body>

@@ -6,13 +6,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HTML Users</title>
+    <title>HTML Customers</title>
 </head>
 <h2>Order data</h2>
 <body>
 <ul>
     <li>${order.id}</li>
-    <li>${order.user.name}</li>
+    <li>${order.customer.name}</li>
     <li>${order.address}</li>
     <c:forEach var="pos" items="${order.orderList}">
         <li>

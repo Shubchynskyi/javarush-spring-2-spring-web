@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>$Title$</title>
+</head>
+<body>
+<div>
+  <div>
+    <ul th:each="customer : ${customers}">
+      <li>
+        <a th:href="'customer?id=' + ${customer.id}" th:text="${customer.name}"></a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div>
+  <form method="POST" action="customers">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Create Customer</button>
+  </form>
+</div>
+</body>
+</html>

@@ -8,7 +8,7 @@
     <artifactId>javarush-spring-2-spring-web</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>javarush-spring-2-spring-web</name>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <dependencyManagement>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
@@ -123,6 +123,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+            <version>2.7.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-client</artifactId>
+            <version>2.7.4</version>
         </dependency>
 
     </dependencies>

@@ -4,6 +4,7 @@ import com.example.javarushspring2springweb.dto.ProductDTO;
 import com.example.javarushspring2springweb.mapper.ProductMapper;
 import com.example.javarushspring2springweb.service.ProductService;
 import lombok.AllArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +29,7 @@ public class ProductsController {
         model.addAttribute("products", products);
         return "products";
     }
+
 
     @PostMapping("products")
     public String addProduct(

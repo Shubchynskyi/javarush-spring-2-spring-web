@@ -69,7 +69,8 @@ public class SecurityConfig {
                                 //в POST запросы может только роль ADMIN
                                 .requestMatchers(HttpMethod.POST).hasAuthority("write")
 
-                                .requestMatchers(HttpMethod.GET).hasAnyAuthority("read", "write")
+//                                .requestMatchers(HttpMethod.GET).hasAnyAuthority("read", "write")
+                                .requestMatchers(HttpMethod.GET).authenticated()
 
                                 //в любой запрос кроме тех что выше неавторизованный пользователь
                                 //.anyRequest().anonymous()
@@ -84,6 +85,9 @@ public class SecurityConfig {
                         .permitAll()
                 ).logout(o -> o
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                        .permitAll()
+                ).oauth2Login(o -> o
+                        .defaultSuccessUrl("/")
                         .permitAll()
                 );
 
